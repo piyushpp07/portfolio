@@ -27,7 +27,7 @@ export default function Skills(props) {
    const { isDark } = props
    { console.log(isDark) }
    return (
-      <motion.div style={{ marginTop: '8rem', color: isDark ? 'white' : 'black' }} >
+      <motion.div id="skills" style={{ marginTop: '8rem', color: isDark ? 'white' : 'black' }} >
          <Container style={{ fontFamily: 'Ubuntu', color: isDark ? 'white' : 'black' }} >
             <Row style={{}}>
                <Col xs={20} md={4} >

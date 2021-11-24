@@ -34,9 +34,9 @@ function App() {
           <Content1 id="whatido" isDark={darkTheme} />
           <h2 style={{ textAlign: 'center', marginTop: '3em', alignSelf: 'center', fontFamily: 'Praise', fontSize: '4em', color: darkTheme ? "white" : 'black' }}>Skills And Abilities</h2>
 
-          <Skills id="skills" isDark={darkTheme} />
-          <Experience id="experience" isDark={darkTheme} />
-          <ContactMe id="contact" isDark={darkTheme} />
+          <Skills  isDark={darkTheme} />
+          <Experience  isDark={darkTheme} />
+          <ContactMe  isDark={darkTheme} />
         </div >}
 
     </BrowserRouter >

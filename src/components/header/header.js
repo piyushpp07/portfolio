@@ -16,17 +16,17 @@ export default function Header(props) {
             <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end" activeKey="/home">
                <Nav>
                   <li>
-                     <Link to="/Skills" className="logo">
+                     <ScrollLink to="skills" smooth={true} className="logo">
                         Skills
-                     </Link>
+                     </ScrollLink>
                   </li>
                   <li>
-                     <ScrollLink to="services" smooth={true}>
+                     <ScrollLink to="services" smooth={true} className="logo">
                         Projects
                      </ScrollLink>
                   </li>
                   <li>
-                     <ScrollLink to="features" smooth={true}>
+                     <ScrollLink to="features" smooth={true} className="logo">
                         About
                      </ScrollLink>
                   </li>

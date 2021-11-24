@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Navbar, Container, Nav } from 'react-bootstrap'
-import { Link as ScrollLink } from "react-scroll";
+import { Navbar, Container, Nav, NavLink } from 'react-bootstrap'
+import { motion } from 'framer-motion';
 import { Link } from "react-router-dom";
 import DarkModeToggle from "react-dark-mode-toggle";
 export default function Header(props) {
@@ -14,22 +14,10 @@ export default function Header(props) {
             <Navbar.Brand  > <h3 style={{ fontStyle: 'Praise', color: isDark ? 'white' : 'black' }}>Piyush Paradkar</h3> </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end" activeKey="/home">
-               <Nav>
-                  <li>
-                     <Link to="/Skills" className="logo">
-                        Skills
-                     </Link>
-                  </li>
-                  <li>
-                     <ScrollLink to="services" smooth={true}>
-                        Projects
-                     </ScrollLink>
-                  </li>
-                  <li>
-                     <ScrollLink to="features" smooth={true}>
-                        About
-                     </ScrollLink>
-                  </li>
+               <Nav >
+                  <NavLink style={{ color: isDark ? "white" : "black", fontWeight: 'bold' }}>Skills</NavLink>
+                  <NavLink style={{ color: isDark ? "white" : "black", fontWeight: 'bold' }}>Experience</NavLink>
+                  <NavLink style={{ color: isDark ? "white" : "black", fontWeight: 'bold' }}>Contact Me</NavLink>
                </Nav>
             </Navbar.Collapse>
          </Container >

@@ -6,6 +6,7 @@ import Skills from './components/skills/Skills';
 import Experience from './components/experience/Experience';
 import ContactMe from './components/Contact/ContactMe';
 import Intro from './components/Intro/Intro';
+import Projects from './components/Projects/Projects';
 import { BoltLoader } from "react-awesome-loaders";
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import { zeroRightClassName, fullWidthClassName, noScrollbarsClassName } from 'react-remove-scroll-bar';
@@ -36,8 +37,9 @@ function App() {
           <Intro id="intro" isDark={darkTheme} />
           <Content1 id="whatido" isDark={darkTheme} />
           <h2 style={{ textAlign: 'center', marginTop: '3em', alignSelf: 'center', fontFamily: 'Praise', fontSize: '4em', color: darkTheme ? "white" : 'black' }}>Skills And Abilities</h2>
-
           <Skills isDark={darkTheme} />
+          <h2 style={{ textAlign: 'center', marginTop: '3em', alignSelf: 'center', fontFamily: 'Praise', fontSize: '4em', color: darkTheme ? "white" : 'black' }}>Projects</h2>
+          <Projects isDark={darkTheme} />
           <Experience isDark={darkTheme} />
           <ContactMe isDark={darkTheme} />
         </div >}

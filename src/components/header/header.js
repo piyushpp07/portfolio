@@ -1,42 +1,39 @@
 import React, { useState } from 'react'
 import { Navbar, Container, Nav, NavLink } from 'react-bootstrap'
-import { motion } from 'framer-motion';
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 import DarkModeToggle from "react-dark-mode-toggle";
 
 
 export default function Header(props) {
-
+   const data = [
+      { name: 'Skills', link: 'skills' },
+      { name: 'Projects', link: 'projects' },
+      { name: 'Experience', link: 'experience' },
+      { name: 'Contact', link: 'contace' },
+   ]
    const { isDark } = props;
    const [isDarkMode, setIsDarkMode] = useState(isDark);
    return (
 
-      <Navbar collapseOnSelect expand="lg" bg={isDark ? "#171C28" : "light"} >
+      <Navbar expand="sm" bg={isDark ? "#171C28" : "light"} >
          <Container>
-            <Link to="main"></Link>
             <Navbar.Brand  > <h3 style={{ fontStyle: 'Praise', color: isDark ? 'white' : 'black' }}>Piyush Paradkar</h3> </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end" activeKey="/home">
 
                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
 
-                  <li style={{ marginRight: '2em', listStyle: 'none' }}>
-                     <ScrollLink to="skills" smooth={true} style={{ color: isDark ? 'white' : 'black', fontSize: '1.5em', fontStyle: 'normal', textDecoration: 'none' }}>
-                        Skills
-                     </ScrollLink>
-                  </li>
+                  {
+                     data.map((item) => (
+                        <li style={{ marginRight: '2em', listStyle: 'none' }}>
+                           <ScrollLink to={item.link} smooth={true} style={{ color: isDark ? 'white' : 'black', fontSize: '1.5em', fontStyle: 'normal', textDecoration: 'none' }}>
+                              {item.name}
+                           </ScrollLink>
+                        </li>
+                     ))
+                  }
 
-                  <li style={{ marginRight: '2em', listStyle: 'none' }}>
-                     <ScrollLink to="services" smooth={true} style={{ color: isDark ? 'white' : 'black', fontSize: '1.5em', fontStyle: 'normal', textDecoration: 'none' }}>
-                        Projects
-                     </ScrollLink>
-                  </li>
-                  <li style={{ marginRight: '2em', listStyle: 'none' }}>
-                     <ScrollLink to="features" smooth={true} style={{ color: isDark ? 'white' : 'black', fontSize: '1.5em', fontStyle: 'normal', textDecoration: 'none' }}>
-                        About
-                     </ScrollLink>
-                  </li>
                </div>
             </Navbar.Collapse>
          </Container >

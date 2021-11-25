@@ -25,7 +25,6 @@ const skills = [
 
 export default function Skills(props) {
    const { isDark } = props
-   { console.log(isDark) }
    return (
       <motion.div id="skills" style={{ marginTop: '8rem', color: isDark ? 'white' : 'black' }} >
          <Container style={{ fontFamily: 'Ubuntu', color: isDark ? 'white' : 'black' }} >

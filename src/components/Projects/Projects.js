@@ -14,13 +14,12 @@ export default function Projects(props) {
       { type: 'Website', name: "BasicBankingWebsite", desc: "This is a Basic Banking  website build with react,firebase", gitLink: '', appLink: '', image: "" }
    ]
    return (
-      <div >
+      <div id="projects">
          <Container style={{ fontFamily: 'Ubuntu', marginTop: '8em', color: isDark ? "white" : "black", }} >
             <Row >
                {
                   data.map((item) => (
-
-                     <Col xs={20} md={4}>
+                     <Col sm={3} xs={18} md={4}>
                         <Card image={item.image} type={item.type} name={item.name} desc={item.desc} gitLink={item.gitLink} />
                      </Col>
                   )

@@ -3,9 +3,10 @@ import { Container, Row, Col, Button } from 'react-bootstrap'
 import ReactCardFlip from 'react-card-flip';
 import { SocialIcon } from 'react-social-icons';
 import Typewriter from 'typewriter-effect';
+import { Image } from 'react-bootstrap';
 export default function Card(props) {
 
-   const { desc, name, gitLink, appLink, type } = props;
+   const { desc, name, gitLink, appLink, type, image } = props;
    const [isFlipped, setIsFlipped] = useState(false)
    const handleClick = () => {
       setIsFlipped(isFlipped ? false : true);
@@ -23,16 +24,17 @@ export default function Card(props) {
                   <h3 style={{ fontSize: '4em', fontFamily: 'Praise', }}>{type} <h1 style={{ color: '#00A19D' }}>{name}</h1></h3>
                   <br></br>
                   <h2 style={{ fontFamily: 'monospace', fontWeight: 'bold' }} >
-
+                     <Image src={image}></Image>
                   </h2>
                   <div style={{ marginTop: '1.5em', display: 'flex', justifyContent: 'space-around' }}>
-
+                     <SocialIcon network="github" url={gitLink} bgColor='isDark ? "white" : "black' />
+                     <SocialIcon url={appLink} label="Our portfolio" />
 
                   </div>
                   <br></br>
                   <div style={{ marginTop: '1.5em', display: 'flex', justifyContent: 'space-around' }}>
 
-                     <Button onClick={handleClick} style={{ borderRadius: '3em', backgroundColor: '#FF87CA', padding: '0.4em' }}>More Details...</Button>
+                     <Button onClick={handleClick} style={{ borderRadius: '3em', backgroundColor: 'grey', padding: '0.4em' }}>More Details</Button>
                   </div>
                </Col>
             </div>
@@ -55,7 +57,7 @@ export default function Card(props) {
                   <br></br>
                   <div style={{ marginTop: '1.5em', display: 'flex', justifyContent: 'space-around' }}>
 
-                     <Button onClick={handleClick} style={{ borderRadius: '3em', backgroundColor: '#FF87CA', padding: '0.4em' }}>More Details...</Button>
+                     <Button onClick={handleClick} style={{ borderRadius: '3em', backgroundColor: '#FF87CA', padding: '0.4em' }}>Less Details</Button>
                   </div>
                </Col>
             </div>

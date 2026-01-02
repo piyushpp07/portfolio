@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import Lenis from '@studio-freight/lenis';
 
 import Navbar from './components/Navbar';
@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     const lenis = new Lenis();
 
-    function raf(time) {
+    function raf(time: DOMHighResTimeStamp) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }

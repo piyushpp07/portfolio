@@ -1,9 +1,15 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useInView } from 'framer-motion';
 import { animate } from 'framer-motion';
 
-const AnimatedCounter = ({ to, from = 0, duration = 1.5 }) => {
-    const ref = useRef(null);
+interface AnimatedCounterProps {
+    to: number;
+    from?: number;
+    duration?: number;
+}
+
+const AnimatedCounter = ({ to, from = 0, duration = 1.5 }: AnimatedCounterProps) => {
+    const ref = useRef<HTMLSpanElement>(null);
     const inView = useInView(ref, { once: true });
 
     useEffect(() => {

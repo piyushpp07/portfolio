@@ -1,11 +1,21 @@
-import React from 'react';
+
+import type React from 'react';
 import { motion } from 'framer-motion';
 import { 
-    Cpu, Cloud, Code, Database, Box, GitBranch, Binary, BrainCircuit,
+    Cloud, Code, Database, Box, GitBranch, Binary, BrainCircuit,
     Zap, Route, Palette, Sparkles, Key, FileText, Image 
 } from 'lucide-react';
 
-const skills = {
+interface SkillItem {
+    name: string;
+    icon: React.ReactNode;
+}
+
+interface SkillsData {
+    [key: string]: SkillItem[];
+}
+
+const skills: SkillsData = {
     'Cloud': [
         { name: 'AWS', icon: <Cloud className="w-8 h-8 text-white" /> },
         { name: 'Azure', icon: <Cloud className="w-8 h-8 text-white" /> },
@@ -71,7 +81,7 @@ const Skills = () => {
                     >
                         <h3 className="text-xl font-bold text-white mb-4">{category}</h3>
                         <div className="flex flex-wrap gap-4">
-                            {skills[category].map((skill, skillIndex) => (
+                            {skills[category].map((skill: SkillItem, skillIndex: number) => (
                                 <motion.div
                                     key={skillIndex}
                                     className="flex items-center gap-2 p-2 rounded-lg bg-white/10"

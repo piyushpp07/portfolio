@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 
 const experiences = [
@@ -24,7 +24,20 @@ const experiences = [
   },
 ];
 
-const ExperienceCard = ({ experience, index }) => {
+interface ExperienceProps {
+  title: string;
+  company_name: string;
+  logo: string;
+  date: string;
+  points: string[];
+}
+
+interface ExperienceCardProps {
+  experience: ExperienceProps;
+  index: number;
+}
+
+const ExperienceCard = ({ experience, index }: ExperienceCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -46,7 +59,7 @@ const ExperienceCard = ({ experience, index }) => {
         </p>
         <p className="text-secondary text-sm md:text-base">{experience.date}</p>
         <ul className="mt-5 list-disc ml-5 space-y-2">
-          {experience.points.map((point, pointIndex) => (
+          {experience.points.map((point: string, pointIndex: number) => (
             <motion.li
               key={`experience-point-${pointIndex}`}
               initial={{ opacity: 0, x: -50 }}

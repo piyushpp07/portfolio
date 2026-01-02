@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import Tilt from 'react-parallax-tilt';
 import MagneticButton from './ui/MagneticButton';
@@ -47,7 +47,24 @@ const projects = [
     },
 ];
 
-const ProjectCard = ({ project }) => {
+interface ProjectTag {
+    name: string;
+    color: string;
+}
+
+interface ProjectProps {
+    name: string;
+    description: string;
+    tags: ProjectTag[];
+    source_code_link: string;
+    className: string;
+}
+
+interface ProjectCardProps {
+    project: ProjectProps;
+}
+
+const ProjectCard = ({ project }: ProjectCardProps) => {
     return (
         <Tilt>
             <BentoCard className={project.className}>
@@ -68,7 +85,7 @@ const ProjectCard = ({ project }) => {
                 </div>
 
                 <div className="mt-4 flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
+                    {project.tags.map((tag: ProjectTag) => (
                         <p key={tag.name} className={`text-[14px] ${tag.color}`}>
                             #{tag.name}
                         </p>

@@ -1,7 +1,13 @@
+
 import React from 'react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 
-export const BentoCard = ({ children, className, ...props }) => {
+interface BentoCardProps extends React.ComponentPropsWithoutRef<typeof motion.div> {
+    children?: React.ReactNode;
+    className?: string;
+}
+
+export const BentoCard = ({ children, className, ...props }: BentoCardProps) => {
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
 
@@ -28,7 +34,7 @@ export const BentoCard = ({ children, className, ...props }) => {
             <div
                 className="absolute inset-0"
                 style={{
-                    background: spotlight,
+                    background: spotlight as any,
                 }}
             />
             {children}

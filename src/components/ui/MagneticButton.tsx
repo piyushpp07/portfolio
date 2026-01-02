@@ -1,11 +1,16 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 
-const MagneticButton = ({ children }) => {
-    const ref = useRef(null);
+interface MagneticButtonProps {
+    children: React.ReactNode;
+}
+
+const MagneticButton = ({ children }: MagneticButtonProps) => {
+    const ref = useRef<HTMLDivElement>(null);
     const [position, setPosition] = useState({ x: 0, y: 0 });
 
-    const handleMouse = (e) => {
+    const handleMouse = (e: React.MouseEvent) => {
+        if (!ref.current) return;
         const { clientX, clientY } = e;
         const { height, width, left, top } = ref.current.getBoundingClientRect();
         const middleX = clientX - (left + width / 2);

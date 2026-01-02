@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 const CustomCursor = () => {
@@ -19,7 +19,7 @@ const CustomCursor = () => {
     });
 
     useEffect(() => {
-        const handleMouseMove = (e) => {
+        const handleMouseMove = (e: MouseEvent) => {
             cursorPositions.forEach(({ x, y }) => {
                 x.set(e.clientX);
                 y.set(e.clientY);

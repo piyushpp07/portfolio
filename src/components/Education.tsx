@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 
 const education = [
@@ -14,7 +14,18 @@ const education = [
     },
 ];
 
-const EducationCard = ({ edu, index }) => {
+interface EducationProps {
+    degree: string;
+    institution: string;
+    date: string;
+}
+
+interface EducationCardProps {
+    edu: EducationProps;
+    index: number;
+}
+
+const EducationCard = ({ edu, index }: EducationCardProps) => {
     return (
         <motion.div
             initial={{ opacity: 0, y: 50 }}
